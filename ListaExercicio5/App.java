@@ -437,6 +437,7 @@ public class App {
             System.out.println("7 - Ex7");
             System.out.println("8 - Ex8");
             System.out.println("9 - Ex9");
+            System.out.println("0 - Sair");
             System.out.println("insira sua opcao:");
             op = scan.nextInt();
             switch (op) {
