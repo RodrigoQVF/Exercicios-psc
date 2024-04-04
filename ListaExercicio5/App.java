@@ -1,6 +1,10 @@
 import java.util.*;
 
 public class App {
+        /**
+     * @author Rodrigo Queiroz Vieira Freire
+     *         Lista de exercício 5
+     */
     public static void Ex1(Scanner scan) {
         int idade, sumIdade = 0, cont = 0;
         float media;
