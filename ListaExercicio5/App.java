@@ -341,10 +341,10 @@ public class App {
         int nAcidente[] = new int[5], maiorAcidente = 0, menorAcidente = 0;
         float media;
         String cidade, cidadeMaior = "A", cidadeMenor = "A";
-
+        scan.nextLine();
         while (quant != 5) {
             System.out.println("Insira nome da cidade");
-            cidade = scan.next();
+            cidade = scan.nextLine();
             System.out.println("Insira numero de veiculos");
             nVeiculo = scan.nextInt();
             System.out.println("Insira numeros de acidentes");
