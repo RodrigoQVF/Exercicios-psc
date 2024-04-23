@@ -54,7 +54,9 @@ public class App {
         int j = 0, k = 0, contaNegativo = 0, contaPositivo = 0;
 
         for(int i = 0; i < 8; i++){
+            do{
             vetor[i] = scan.nextInt();
+            }while(vetor[i] == 0);
 
             if(vetor[i] < 0){
                 contaNegativo++;
@@ -74,6 +76,7 @@ public class App {
         }
 
         System.out.print("Vetor positivo:");
+        // [1, 2, 3, 4, 0, 0, 0 ,0 ]
         for(int l = 0; l<8; l++){
             if(vp[l] == 0)
             break;
