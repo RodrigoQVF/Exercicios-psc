@@ -10,11 +10,11 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
         ArrayList<Empregado> empregado = new ArrayList<>();
+        
         int op = 999;
         String nome;
         int idade;
         float salario;
-        int id = 0;
 
         while(op != 7){
             System.out.println("""
@@ -31,7 +31,6 @@ public class App {
             scan.nextLine();
             switch (op) {
                 case 1:
-                System.out.println("ID funcionario= " + id);
                 System.out.println("Nome:");
                 nome = scan.nextLine();
                 System.out.println("Idade");
@@ -39,13 +38,12 @@ public class App {
                 System.out.println("Salario:");
                 salario = scan.nextFloat();
                 empregado.add(new Empregado(nome, idade, salario));
-                id++;
 
                 break;
                 case 2:
                 int idAtual = identificaId(scan);
-                if(idAtual > empregado.size() - 1 || idAtual < empregado.size() - 1){
-                    System.out.println("Funcionario nao existente");
+                if(idAtual >= empregado.size()){
+                    System.out.println("\nFuncionario nao existente\n");
                 }else{
                     empregado.get(idAtual).promover();
                 }
@@ -53,8 +51,8 @@ public class App {
                 break;
                 case 3:
                 idAtual = identificaId(scan);
-                if(idAtual > empregado.size() - 1 || idAtual < empregado.size() - 1){
-                    System.out.println("Funcionario nao existente");
+                if(idAtual >= empregado.size()){
+                    System.out.println("\nFuncionario nao existente\n");
                 }else{
                     System.out.println("Insira a porcentagem do aumento");
                     float porcentagem = scan.nextFloat();
@@ -64,8 +62,8 @@ public class App {
                 break;
                 case 4:
                 idAtual = identificaId(scan);
-                if(idAtual > empregado.size() - 1 || idAtual < empregado.size() - 1){
-                    System.out.println("Funcionario nao existente");
+                if(idAtual >= empregado.size()){
+                    System.out.println("\nFuncionario nao existente\n");
                 }else{
                     System.out.println("1 - Justa causa");
                     System.out.println("2 - Decisão do empregador");
@@ -74,21 +72,20 @@ public class App {
                     int opDemissao = scan.nextInt();
                     empregado.get(idAtual).demitir(opDemissao);
                     empregado.remove(idAtual);
-                    id = idAtual;
 
                 }
                 break;
                 case 5:
                 idAtual = identificaId(scan);
-                if(idAtual > empregado.size() - 1 || idAtual < empregado.size() - 1){
-                    System.out.println("Funcionario nao existente");
+                if(idAtual >= empregado.size()){
+                    System.out.println("\nFuncionario nao existente\n");
                 }else{
                     empregado.get(idAtual).fazerAniversario(); 
                 }
                 
                 break;
                 case 6:
-                    int i = 0;
+                int i = 0;
                 for(Empregado mostraEmpregados : empregado){
                     System.out.println("Id: " + i);
                     System.out.println(mostraEmpregados.toString());
